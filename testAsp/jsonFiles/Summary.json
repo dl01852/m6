@@ -1,0 +1,28 @@
+﻿{
+  "product": [
+    {
+      "ID": 0,
+      "title": "Apple iPhone 7 plus",
+      "thumbnail": "ip7p.jpg",
+      "price": "$900.00"
+    },
+    {
+      "ID": 0,
+      "title": "Apple iPhone 7 ",
+      "thumbnail": "ip7.jpg",
+      "price": "$700.00"
+    },
+    {
+      "ID": 0,
+      "title": "Samsung Galaxy S7",
+      "thumbnail": "sgs7.jpg",
+      "price": "$600.00"
+    },
+    {
+      "ID": 0,
+      "title": "Samsung Galaxy S7 Edge",
+      "thumbnail": "sgs7e.jpg",
+      "price":  "$800.00"
+    }
+  ]
+}

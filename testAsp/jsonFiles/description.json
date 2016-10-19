@@ -1,0 +1,20 @@
+﻿{
+  "Description": [
+    {
+      "ID": 0,
+      "Description":" 5.5in 720 LED phone with 3GB RAM, 12MP dual camera and an A10 Fusion chip"
+    },
+    {
+      "ID": 1,
+      "Description": "4.7in 720 LED phone with 2GB RAM, 12MP single camera and an A10 Fusion chip"
+    },
+    {
+      "ID": 2,
+      "Description": "5.1 1440 AMOLED phone with 4GB RAM, 12MP camera and a Quad-core processor"
+    },
+    {
+      "ID": 3,
+      "Description": "5.5 1440 AMOLED phone with 4GB RAM 12MP camera and a quad core processor"
+    }
+  ]
+}
