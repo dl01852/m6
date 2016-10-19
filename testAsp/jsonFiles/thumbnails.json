@@ -1,0 +1,21 @@
+﻿{
+  "Thumbnails": [
+    {
+      "ID": 0,
+      "Thumbnail": "images/ip7p.png"
+    },
+    {
+      "ID": 1,
+      "Thumbnail": "images/ip7.png"
+    },
+    {
+      "ID": 2,
+      "Thumbnail": "images/sgs7.png"
+    },
+    {
+      "ID": 3,
+      "Thumbnail": "images/sgs7e.png"
+    }
+  ]
+
+}

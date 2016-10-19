@@ -1,28 +1,28 @@
 ﻿{
-  "product": [
+  "Products": [
     {
       "ID": 0,
-      "title": "Apple iPhone 7 plus",
-      "thumbnail": "ip7p.png",
-      "price": "$900.00"
+      "Title": "Apple iPhone 7 plus",
+      "Thumbnail": "images/ip7p.png",
+      "Price": "$900.00"
     },
     {
-      "ID": 0,
-      "title": "Apple iPhone 7 ",
-      "thumbnail": "ip7.png",
-      "price": "$700.00"
+      "ID": 1,
+      "Title": "Apple iPhone 7 ",
+      "Thumbnail": "images/ip7.png",
+      "Price": "$700.00"
     },
     {
-      "ID": 0,
-      "title": "Samsung Galaxy S7",
-      "thumbnail": "sgs7.png",
-      "price": "$600.00"
+      "ID": 2,
+      "Title": "Samsung Galaxy S7",
+      "Thumbnail": "images/sgs7.png",
+      "Price": "$600.00"
     },
     {
-      "ID": 0,
-      "title": "Samsung Galaxy S7 Edge",
-      "thumbnail": "sgs7e.png",
-      "price":  "$800.00"
+      "ID": 3,
+      "Title": "Samsung Galaxy S7 Edge",
+      "Thumbnail": "images/sgs7e.png",
+      "Price":  "$800.00"
     }
   ]
 }
