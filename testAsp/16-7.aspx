@@ -48,7 +48,7 @@
             <asp:TextBox runat="server" id="txtEmail" TextMode="Email" Columns="25"/>
             
             <!-- FIELD VALIDATOR FOR EMAIL -->
-            <asp:RequiredFieldValidator runat="server" id="RequiredEmailField" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="*" EnableClientScript="False"/>
+            <asp:RequiredFieldValidator runat="server" id="RequiredEmailField" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="*" EnableClientScript="True"/>
             <asp:RegularExpressionValidator runat="server" id="RegularExpressionEmailValidator" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Invalid email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
         </p><br/>
         <a href="xmlFiles/bannedEmails.xml">Banned Emails</a>
