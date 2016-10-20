@@ -19,13 +19,12 @@
         var asyncRequest2;
         var asyncRequest3;
         var asyncRequest4;
-        var imageTag;
         var thumbTag;
 
-        function loadJson(url1, url2, url3, url4) {
+        function loadJson(url1, url2, url3, url4) { // AsyncRequest to for all the json files.
             try {
                 asyncRequest1 = new XMLHttpRequest();
-                asyncRequest1.addEventListener("readystatechange", parseData, false);
+                asyncRequest1.addEventListener("readystatechange", parseData, false); // had a hanging response because i didnt have this line
                 asyncRequest1.open("GET", url1, true);
                 asyncRequest1.send(null);
 
@@ -45,50 +44,56 @@
                 asyncRequest4.open("GET", url4, true);
                 asyncRequest4.send(null);
             } catch (e) {
-                alert(e.message);
+                alert(e.message); // tell me what happened.
             }
         }
 
-        function parseData() {
+        function parseData() { // ReadyState 4 means it completed. and we make sure the status is 200 for all the asyncRequest
             if ((asyncRequest1.readyState == 4 && asyncRequest1.status == 200) && (asyncRequest2.readyState == 4 && asyncRequest2.status == 200) &&
             (asyncRequest3.readyState == 4 && asyncRequest3.status == 200) && (asyncRequest4.readyState == 4 && asyncRequest4.status == 200)) {
 
+                // Parse the Json into objects
                 products = JSON.parse(asyncRequest1.responseText);
                 thumbnails = JSON.parse(asyncRequest2.responseText);
                 images = JSON.parse(asyncRequest3.responseText);
                 description = JSON.parse(asyncRequest4.responseText);
 
+                // pass the objects to this function to display.
                 displayData(products, thumbnails);
             }
         }
 
         function displayData(products, thumbnails) {
+            // the table for the output.
             var output = document.getElementById("data");
             var outputTable = document.createElement("table");
             var outputBody = document.createElement("tbody");
 
             for (var i = 0; i < products.Products.length; i++) {
 
+                // creation of new tags.
                 var thumbnail = thumbnails.Thumbnails[i].Thumbnail;
                 var productRow = document.createElement("tr");
                 var imageCell = document.createElement("td");
                 var dataCell = document.createElement("td");
                 var fillRow = document.createElement("tr");
-                var imageTag = document.createElement("img");
                 var spanTag = document.createElement("span");
                 var imageSpan = document.createElement("span");
-                var buttonInput = document.createElement("input");
-                var moreInfoCell = document.createElement("td");
-                moreInfoCell.setAttribute("colspan", 2);
-                outputBody.setAttribute("align", "right");
-                var filler = document.createElement("div");
-                imageSpan.setAttribute("ID", "filler" + i);
+                var btnDescription = document.createElement("input");
+                var tblDataTag = document.createElement("td");
+                var spanID = "data" + i;
+                var tblData = document.createElement("div");
                 thumbTag = document.createElement("img");
-                buttonInput.setAttribute("type", "button");
-                buttonInput.setAttribute("value", "description");
+
+                //applying attributes and setting up eventHandlers.
+                tblDataTag.setAttribute("colspan", 2);
+                outputBody.setAttribute("align", "right");
+                imageSpan.setAttribute("ID", "filler" + i);
+                btnDescription.setAttribute("type", "button");
+                btnDescription.setAttribute("value", "description");
                 //buttonInput.addEventListener("click", function() { addDescription(i) }, false);
-                buttonInput.setAttribute("onclick", "addDescription("+ i +")");
-                buttonInput.setAttribute("align", "right");
+                btnDescription.setAttribute("onclick", "addDescription("+ i +")");
+                btnDescription.setAttribute("align", "right");
                 spanTag.setAttribute("ID", "data" + i);
                 spanTag.setAttribute("align", "left");
                 //thumbTag.addEventListener("mouseover", function() { mouseOver(i) }, false);
@@ -96,16 +101,16 @@
                 thumbTag.setAttribute("onmouseover", "mouseOver(" + i + ")");
                 thumbTag.setAttribute("src", thumbnail); // see about this!
                 thumbTag.setAttribute("ID", "thumbnail" + i);
+
+                //appending tags together and piecing the table.
                 imageCell.appendChild(thumbTag);
                 dataCell.appendChild(spanTag);
-                var spanID = "data" + i;
                 productRow.appendChild(imageCell);
                 productRow.appendChild(dataCell);
-                filler.appendChild(imageSpan);
-                filler.appendChild(buttonInput);
-                moreInfoCell.appendChild(filler);
-                fillRow.appendChild(moreInfoCell);
-
+                tblData.appendChild(imageSpan);
+                tblData.appendChild(btnDescription);
+                tblDataTag.appendChild(tblData);
+                fillRow.appendChild(tblDataTag);
                 outputBody.appendChild(productRow);
                 outputBody.appendChild(fillRow);
                 outputTable.appendChild(outputBody);
@@ -116,15 +121,15 @@
 
         function mouseOut(id) {
 
-            var littlePic = document.getElementById("thumbnail" + id).setAttribute("src", thumbnails.Thumbnails[id].Thumbnail);
+            document.getElementById("thumbnail" + id).setAttribute("src", thumbnails.Thumbnails[id].Thumbnail);
         }
         function mouseOver(id) {
-            var bigPic = document.getElementById("thumbnail" + id).setAttribute("src", images.Images[id].Image);
-            //var fillerbox = document.getElementById("thumbnail" + id).innerHTML = "<img src=" + images.Images[id].Image + "></img>";
+             document.getElementById("thumbnail" + id).setAttribute("src", images.Images[id].Image);
+            
         }
 
         function addDescription(id) {
-            var fillerBox = document.getElementById("filler" + id).innerHTML = description.Descriptions[id].Description;
+           document.getElementById("filler" + id).innerHTML = description.Descriptions[id].Description;
         }
         
     </script>

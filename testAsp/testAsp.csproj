@@ -106,6 +106,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="16-5.txt" />
     <Content Include="16-8.aspx" />
     <Content Include="images\Fip7.png" />
     <Content Include="images\Fip7p.png" />

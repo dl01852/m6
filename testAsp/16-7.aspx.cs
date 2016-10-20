@@ -35,12 +35,21 @@ namespace testAsp
             string email = txtEmail.Text;
             if (bannedEmails.All(bannedEmail => email != bannedEmail))
             {
-                RequiredEmailField.Text = "*";
+               clearForm();
                 return;
             };
             RequiredEmailField.Text = "banned email";
             RequiredEmailField.IsValid = false;
            
+        }
+
+        private void clearForm()
+        {
+            RequiredEmailField.Text = "*";
+            txtName.Text = "";
+            txtEmail.Text = "";
+            lstRatings.SelectedIndex = -1;
+            radBtns.SelectedIndex = -1;
         }
     }
 }

@@ -71,7 +71,7 @@
             <!-- Field Valdiator for radio buttons -->
            <asp:RequiredFieldValidator runat="server" ControlToValidate="radBtns" ErrorMessage="*" ForeColor="Red"/>
             <br/>
-            <asp:RadioButtonList runat="server" TextAlign="Left"  RepeatDirection="Horizontal" id="radBtns">
+            <asp:RadioButtonList runat="server" TextAlign="Left" RepeatDirection="Horizontal" id="radBtns">
                 <asp:ListItem runat="server" Text="Search Engine"/>
                 <asp:ListItem runat="server" Text="Links from another site"/>
                 <asp:ListItem runat="server" Text="Deitel.com Website"/>
